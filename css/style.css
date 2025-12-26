@@ -1,0 +1,1094 @@
+/* =======================
+   基本設定
+======================= */
+
+:root {
+  --gold: #E1C87D;
+  --gold-accent: #D8BC70;
+}
+
+
+body {
+  margin: 0;
+  font-family: 'Georgia', serif;
+  background: #000;
+  color: #f5f5f5;
+  overflow-x: hidden;
+}
+
+/* =======================
+   ヘッダー
+   WP化時 → header.php
+======================= */
+/* =======================
+   ヘッダー
+   WP化時 → header.php
+======================= */
+header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: linear-gradient(135deg, #2b0000 0%, #0d0d0d 70%);
+  padding: 20px 5%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 4px solid var(--gold);
+  box-shadow: 0 4px 20px rgba(0,0,0,0.8);
+}
+
+header h1 {
+  font-family: 'Cinzel', serif;
+  font-size: 2.2rem;
+  color: #f5f5f5;
+  letter-spacing: 2px;
+  padding-left: 15px;
+  border-left: 5px solid var(--gold);
+  text-shadow: 0 0 8px rgba(0,0,0,0.7),
+               0 0 12px rgba(166,124,0,0.4);
+}
+
+header nav a {
+  margin-left: 20px;
+  color: #f5f5f5;
+  text-decoration: none;
+  font-weight: bold;
+  padding: 6px 10px;
+  transition: all 0.3s ease;
+  border-bottom: 2px solid transparent;
+}
+
+header nav a:hover {
+  border-bottom: 2px solid crimson;
+  color: var(--gold);
+  text-shadow: 
+  0 0 1px #E1C87D,
+  0 0 2px rgba(255,248,220,0.4);
+}
+
+
+/* =======================
+   ローディング画面
+======================= */
+#typing-screen {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100vh;
+  background: #000;
+  color: #fff;
+  font-size: 6vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  overflow: hidden;
+}
+#typing-screen span {
+  position: relative;
+  z-index: 20001;
+}
+
+/* カーテン効果 */
+#typing-screen::before,
+#typing-screen::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(to bottom, #800 0%, #b00 50%, #600 100%);
+  z-index: 20000;
+}
+#typing-screen::before { left: 0; }
+#typing-screen::after  { right: 0; }
+
+@keyframes curtainOpen {
+  from { width: 50%; }
+  to { width: 0; }
+}
+#typing-screen.curtain-open::before,
+#typing-screen.curtain-open::after {
+  animation: curtainOpen 1.2s ease forwards;
+}
+
+.fade-out {
+  animation: fadeout 1s ease forwards;
+  pointer-events: none;
+}
+@keyframes fadeout {
+  to { opacity: 0; visibility: hidden; }
+}
+
+/* =======================
+   メインコンテンツ
+   WP化時 → index.php
+======================= */
+#main-content {
+  position: relative;
+  background: linear-gradient(160deg, #0a0a0a 70%, #2b0000 100%);
+  padding: 8vh 5vw;
+  max-width: 1200px;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+#main-content::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 120%;
+  background: radial-gradient(circle at 50% 25%,
+    rgba(220,20,60,0.12) 0%,
+    rgba(139,0,0,0.08) 40%,
+    rgba(0,0,0,0.6) 100%   /* ← ここで暗さも調整 */
+  );
+  z-index: 0;
+  pointer-events: none;   /* ← これが超重要 */
+}
+
+#main-content > * {
+  position: relative;
+  z-index: 1;
+}
+
+
+
+#main-content h1,
+#main-content h2 {
+  text-align: center;
+  font-family: 'Cinzel', serif;
+  color: #fff8dc;
+  letter-spacing: 3px;
+  text-shadow: 0 0 6px rgba(255,215,0,0.5),
+               0 0 15px rgba(255,140,0,0.4);
+  text-transform: uppercase;
+}
+
+#main-content h1 {
+  margin: 110px 0 40px;
+  font-size: 3rem;
+}
+#main-card h2 {
+  margin-bottom: 40px;
+  font-size: 3rem;
+}
+
+/* =======================
+   ポスター風スライダー
+======================= */
+.poster-carousel {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  perspective: 1200px;
+  margin: -40px auto;
+  max-width: 1200px;
+  height: 500px;
+}
+.poster-slide {
+  position: absolute;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%) scale(0.8);
+  opacity: 0;
+  transition: all 0.6s ease;
+  z-index: 0;
+}
+.poster-slide img {
+  width: 320px;
+  transition: transform 0.4s ease, filter 0.4s ease;
+  display: block;
+}
+
+.poster-slide .poster_img {
+  width: 250px;
+}
+
+
+.poster-slide.active {
+  opacity: 1;
+  transform: translate(-50%, -50%) scale(1.3);
+  z-index: 5;
+}
+.poster-slide.prev {
+  opacity: 0.7;
+  transform: translate(-170%, -50%) scale(0.9);
+}
+.poster-slide.next {
+  opacity: 0.7;
+  transform: translate(70%, -50%) scale(0.9);
+}
+.poster-slide:hover img {
+  transform: scale(1.05);
+  filter: brightness(50%);
+}
+.poster-title {
+  position: absolute;
+  bottom: 20px; left: 0; right: 0;
+  text-align: center;
+  font-size: 1.3rem;
+  font-weight: bold;
+  color: #fff;
+  opacity: 0;
+  transition: opacity 0.4s ease, transform 0.3s ease;
+}
+.poster-slide:hover .poster-title {
+  opacity: 1;
+  transform: translateY(-8px);
+}
+
+/* 矢印 */
+.poster-prev, .poster-next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 50px; height: 50px;
+  border: 2px solid rgba(255,255,255,0.4);
+  border-radius: 50%;
+  background: rgba(0,0,0,0.3);
+  cursor: pointer;
+  z-index: 10;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.3s ease;
+  opacity: 0.8;
+}
+.poster-prev { left: -60px; }
+.poster-next { right: -60px; }
+.poster-prev::before,
+.poster-next::before {
+  content: "";
+  display: block;
+  width: 14px; height: 14px;
+  border-top: 3px solid rgba(255,255,255,0.6);
+  border-right: 3px solid rgba(255,255,255,0.6);
+}
+.poster-prev::before { transform: rotate(-135deg); }
+.poster-next::before { transform: rotate(45deg); }
+.poster-prev:hover, .poster-next:hover {
+  background: rgba(178,34,34,0.8);
+  border-color: #ff4444;
+  opacity: 1;
+  transform: translateY(-50%) scale(1.15);
+}
+.poster-prev:hover::before,
+.poster-next:hover::before {
+  border-color: #fff;
+}
+
+/* =======================
+   Works カード
+======================= */
+.tags {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+.tag {
+  display: inline-block;
+  background: #333;
+  color: #fff;
+  padding: 8px 16px;
+  margin: 0 5px 10px;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+.tag:hover, .tag.active { background: crimson; }
+
+.works {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+  justify-content: center;
+  max-width: 1000px;
+  margin: 0 auto 80px;
+}
+.work-card {
+  background: #000;
+  border-radius: 6px;
+  overflow: hidden;
+  border: 1px solid #333;
+  transition: transform 0.3s ease, box-shadow 0.5s ease;
+  cursor: pointer; 
+  position: relative;
+}
+.work-card:hover {
+  transform: scale(1.03);
+  box-shadow: 0 0 18px rgba(255,215,0,0.25);
+}
+.work-card .img-wrapper {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 3 / 4;
+  overflow: hidden;
+}
+.work-card .img-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+.work-card .desc {
+  background: #111;
+  padding: 14px 10px;
+  text-align: center;
+  border-top: 2px solid #b22222;
+  margin-bottom: 0rem;
+}
+.work-card .desc h3 {
+  margin: 0;
+  font-size: 1.1rem;
+  font-weight: bold;
+  color: #fff;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+.work-card .desc p {
+  margin: 6px 0 0;
+  font-size: 0.9rem;
+  color: #bbb;
+}
+
+.work-card .img-wrapper a {
+  display: block;
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+
+
+/* 字幕風ボタン */
+.view-btn {
+  position: absolute;
+  bottom: 12px;
+  left: 50%;
+  transform: translateX(-50%) translateY(10px);
+  background: rgba(0, 0, 0, 0.75);
+  color: #fff;
+  font-size: 14px;
+  padding: 6px 20px;
+  border-radius: 4px;
+  text-shadow: 0 0 4px #000;
+  font-weight: bold;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.4s ease, transform 0.4s ease;
+  white-space: nowrap;
+  z-index: 2;
+  font-family: 'Helvetica Neue', sans-serif;
+}
+
+.work-card:hover .view-btn {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+  pointer-events: auto;
+}
+
+
+
+
+/* View All ボタン */
+.view-all-wrapper { text-align: center; margin: 40px auto 80px; }
+.view-all-btn {
+  display: inline-block;
+  padding: 14px 36px;
+  font-size: 1rem;
+  font-weight: bold;
+  color: #fff;
+  background: crimson;
+  border-radius: 30px;
+  text-decoration: none;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+  transition: all 0.3s ease;
+}
+.view-all-btn:hover {
+  transform: translateY(-2px) scale(1.05);
+  box-shadow: 0 6px 16px rgba(0,0,0,0.6);
+}
+
+
+
+
+
+/* ==== Profile セクション ==== */
+#profile {
+  background-color: #0d0d0d;
+  color: #fff8dc;
+  padding: 60px 40px;
+  font-family: 'Noto Serif JP', serif;
+  line-height: 1.9;
+}
+
+#profile .pamphlet-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 100px;
+  align-items: flex-start;
+}
+
+/* セクション見出し */
+#profile h2 {
+  font-family: 'Cinzel', serif;
+  color: var(--gold);
+  font-size: 3.5rem;
+  margin-bottom: 3rem;
+  letter-spacing: 0.08em;
+  text-align: center;
+}
+
+/* 左カラム：キャスト紹介 */
+#profile .cast {
+  flex: 1 1 450px;
+  text-align: center;
+}
+
+#profile .cast-photo img {
+  width: 100%;
+  max-width: 320px;
+  height: auto;
+  border: 1px solid var(--gold-accent);
+  padding: 6px;
+  background-color: #1a1a1a;
+  cursor: pointer;
+}
+
+#profile .cast-name {
+  font-size: 3rem;
+  color: var(--gold);
+  margin-top: 1.5rem;
+  margin-bottom: 0.5rem;
+  font-family: 'Cinzel', serif;
+  font-weight: 600;
+text-shadow:
+  0 0 1px rgba(255,255,255,0.4),
+  1px 1px 2px rgba(255,255,255,0.25);
+}
+
+#profile .cast-name-en {
+  display: block;
+  font-size: 1.3rem;
+  letter-spacing: 0.1em;
+  margin-top: -1.5rem;
+}
+
+#profile .cast-bio {
+  font-size: 1.1rem;
+  line-height: 1.9;
+  margin-top: 1.5rem;
+}
+
+/* 右カラム全体 */
+#profile .profile-right {
+  flex: 1 1 500px;
+  margin-top: -4rem;
+}
+
+
+/* キャッチコピー用 */
+.review.catchcopy {
+  margin-bottom: 4rem;
+  text-align: center;
+  padding: 2rem 1rem;
+  background: linear-gradient(to right, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+  position: relative;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: inset 0 0 60px rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(2px);
+
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 1.2s ease, transform 1.2s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.review.catchcopy::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: repeating-linear-gradient(90deg, rgba(255,255,255,0.03) 0px, transparent 1px, transparent 3px);
+  opacity: 0.3;
+  pointer-events: none;
+}
+
+.review.catchcopy .copy-main {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: var(--gold);
+  text-shadow: 0 0 4px rgba(225, 200, 125, 0.5);
+  margin-bottom: 0.8rem;
+}
+
+.review.catchcopy .copy-sub {
+  font-size: 1.2rem;
+  color: #fff8dc;
+  opacity: 0.9;
+  font-style: italic;
+}
+
+.review.catchcopy.fadein-active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+
+
+
+
+/* Career / Skills */
+#profile .career {
+  margin-bottom: 3.5rem;
+  padding-left: 10px;
+}
+
+#profile .career h4,
+#profile .skills h4 {
+  font-size: 2rem;
+  color: var(--gold);
+  margin-bottom: 1rem;
+  font-family: 'Cinzel', serif;
+  border-bottom: 1px solid crimson;
+  padding-bottom: 6px;
+}
+
+/* Careerタイムライン */
+.timeline {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  position: relative;
+  margin-top: 2rem;
+  padding-left: 2.5rem;
+}
+
+.timeline::before {
+  content: '';
+  position: absolute;
+  left: 1rem; /* 中央線位置 */
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: linear-gradient(to bottom, #E1C87D, #a67c00);
+  z-index: 0;
+}
+
+/* タイムライン項目 */
+.timeline li {
+  position: relative;
+  display: flex;
+  align-items: flex-start;
+  gap: 1.5rem;
+  margin-bottom: 2.5rem;
+}
+
+/* 丸アイコン */
+.timeline li::before {
+  content: '';
+  position: absolute;
+  left: -1.42rem;
+  top: 0.6rem;
+  transform: translate(-50%, 0);
+  width: 14px;
+  height: 14px;
+  background: radial-gradient(circle, #fff8dc 30%, #E1C87D 60%, #a67c00 100%);
+  border: 2px solid #fff8dc;
+  border-radius: 50%;
+  box-shadow: 0 0 6px rgba(255, 215, 0, 0.6);
+  z-index: 1;
+}
+
+/* 年と説明テキスト */
+.timeline .year {
+  font-weight: bold;
+  color: #E1C87D;
+  white-space: nowrap;
+  min-width: 100px;
+  margin-top: -1px;
+  font-size: 1.3rem;
+  margin-left: 0.6rem; /* 調整済み */
+}
+
+.timeline li span:last-child {
+  color: #fff8dc;
+  font-size: 1rem;
+  line-height: 2.4;
+}
+
+/* 始点・終点のダミー丸だけの要素 */
+.timeline li.dummy {
+  height: 14px;
+  margin-bottom: 2.2rem;
+}
+
+.timeline li.dummy span {
+  display: none;
+}
+
+.timeline li.dummy::before {
+  top: 0;
+}
+
+
+
+/* Skills */
+
+/* 見出しとスキルを左寄せに */
+.profile-skill {
+  margin-top: -8rem;
+  position: relative;
+  width: 100%;
+  text-align: left;
+}
+
+/* Skills 全体を2列グリッドに */
+#profile .skills {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr)); /* 2列 */
+  column-gap: 2rem;  /* 左右の間隔 */
+  row-gap: 0.6rem;
+  margin-left: 0.5rem;
+  margin-top: -1rem;
+  margin-bottom: 3rem; /* 上下の間隔 */
+}
+
+/* 見出しは1行まるごと使う */
+#profile .skills h4 {
+  grid-column: 1 / -1;   /* 1〜2列ぶち抜き */
+  margin-bottom: 0.8rem;
+}
+
+/* 各スキル行のスタイル */
+#profile .skills p {
+  font-size: 1.3rem;
+  margin: 0;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+/* ラベルと星 */
+#profile .skills .skill-label {
+  width: auto;
+  text-align: left;
+  color: #fff8dc;
+  margin-right: 0.5rem;
+}
+
+#profile .skills .stars {
+  color: var(--gold-accent);
+  font-size: 1.1rem;
+  font-family: 'Cinzel', serif;
+  letter-spacing: 0.2em;
+}
+
+
+/* モバイル対応 */
+@media screen and (max-width: 768px) {
+  #profile {
+    padding: 60px 20px;
+  }
+
+  #profile .pamphlet-inner {
+    flex-direction: column;
+    align-items: center;
+    gap: 60px;
+  }
+
+  #profile .review blockquote {
+    text-align: center;
+    padding-left: 0;
+  }
+
+  #profile .review blockquote::before {
+    display: none;
+  }
+
+  #profile .review cite {
+    text-align: center;
+  }
+
+  #profile .career,
+  #profile .skills {
+    padding-left: 0;
+    text-align: center;
+  }
+
+  #profile .timeline {
+    border-left: none;
+    margin: 1.5rem 0 0;
+  }
+
+  .timeline li::before {
+    display: none;
+  }
+
+  .timeline li {
+    padding-left: 0;
+  }
+}
+
+
+/* ▼ フル画像まわり -------------------------------- */
+
+/* 通常はフル画像は全部消しておく */
+.profile-full-image {
+  display: none;
+  text-align: center;
+}
+
+.profile-full-image img {
+  width: 100vw;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+  cursor: pointer;
+}
+
+/* show-image 中は「アクティブな箱だけ」表示 */
+#profile.show-image .profile-full-image {
+  display: none; /* まず全部消す */
+}
+
+#profile.show-image .profile-full-image.is-active {
+  display: block; /* この箱だけ表示 */
+}
+
+/* show-image 中はプロフィール側は消す */
+#profile.show-image .pamphlet-inner,
+#profile.show-image h2 {
+  display: none;
+}
+
+/* ▼ クリック可能な見た目＆ヒント ------------------ */
+
+.clickable {
+  position: relative;
+  cursor: pointer;
+}
+
+/* 共通のバッジ基本形（非表示） */
+.cast-photo.clickable::after,
+.profile-full-image.clickable::after {
+  position: absolute;
+  left: 50%;
+  bottom: 12px;
+  transform: translateX(-50%);
+  padding: 6px 12px;
+  font-size: 0.8rem;
+  color: #fff;
+  background: rgba(0,0,0,0.6);
+  border-radius: 999px;
+  opacity: 0;
+  pointer-events: none;
+  white-space: nowrap;
+  transition: opacity .3s ease;
+}
+
+/* cast-photo 側の文言 */
+.cast-photo.clickable::after {
+  content: "クリック / スワイプで全体を見る ⟷";
+}
+
+#profile.full-first .profile-full-image.clickable::after {
+  content: "クリック / スワイプで次の画像へ ▶︎";
+}
+
+
+/* full-image 側の文言 */
+.profile-full-image.clickable::after {
+  content: "クリック / スワイプでプロフィールに戻る ⟵";
+}
+
+/* ホバー中は常に表示 */
+.cast-photo.clickable:hover::after,
+.profile-full-image.clickable:hover::after {
+  opacity: 1;
+}
+
+/* ヒント用アニメ（必要なら） */
+@keyframes swipe-hint {
+  0%   { transform: translate(-50%, 0); }
+  50%  { transform: translate(-50%, -4px); }
+  100% { transform: translate(-50%, 0); }
+}
+
+#profile.initial-hint .cast-photo.clickable::after {
+  opacity: 1;
+  animation: swipe-hint 1.6s ease-in-out infinite;
+}
+
+#profile.initial-hint-full .profile-full-image.clickable::after {
+  opacity: 1;
+  animation: swipe-hint 1.6s ease-in-out infinite;
+}
+
+
+/* =======================
+   Footer / Credit
+   WP化時 → footer.php
+======================= */
+.credit-section {
+  padding: 6vh 5vw;
+  background: #000;
+  text-align: center;
+  overflow: hidden;
+  position: relative;
+}
+.credit-section::before,
+.credit-section::after {
+  content: "";
+  position: absolute;
+  top: 0; bottom: 0;
+  width: 60px;
+  background-image: repeating-linear-gradient(
+    to bottom,
+    #000 0px, #000 40px,
+    #fff 40px, #fff 80px
+  );
+  background-size: 100% 80px;
+  opacity: 0.5;
+  animation: filmMove 4s linear infinite;
+}
+.credit-section::before { left: 0; }
+.credit-section::after { right: 0; }
+@keyframes filmMove {
+  from { background-position: 0 0; }
+  to { background-position: 0 80px; }
+}
+
+.credits {
+  position: relative;
+  z-index: 1;
+  animation: creditRoll 25s linear infinite;
+  font-family: 'Cinzel', serif;
+  font-size: 1.3rem;
+  line-height: 2.4;
+  color: #f5f5f5;
+  text-shadow: 0 0 6px rgba(255,255,255,0.3);
+}
+@keyframes creditRoll {
+  0%   { transform: translateY(100%); }
+  100% { transform: translateY(-100%); }
+}
+.credits p:last-child {
+  margin-top: -10px;
+  font-size: 1rem;
+  font-weight: bold;
+  color: #fff;
+  text-shadow: 0 0 8px rgba(255,215,0,0.6);
+}
+
+.credits p:nth-child(5) {
+  margin-top: 40px;
+  font-size: 2rem;
+  font-weight: 800;
+  color: var(--gold);
+  text-shadow: 
+    0 0 1px #E1C87D,
+    0 0 2px #E1C87D,
+    0 0 4px rgba(255, 248, 220, 0.5);
+}
+
+.back-to-top {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  color: #aaa;
+  font-size: 0.9rem;
+  text-decoration: none;
+  background: rgba(0,0,0,0.5);
+  padding: 6px 12px;
+  border-radius: 20px;
+  transition: all 0.3s ease;
+  z-index: 2; /* クレジットより前 */
+}
+.back-to-top:hover {
+  color: var(--gold);
+  background: rgba(0,0,0,0.8);
+  text-shadow: 0 0 6px rgba(255,215,0,0.6);
+}
+
+
+
+:root { --header-h: 140px; }
+html, body { scroll-padding-top: var(--header-h); } 
+#closing-message-title { scroll-margin-top: var(--header-h); } 
+
+/* 閉幕メッセージ */
+.closing-slate{
+  padding: 40px 18px 28px;
+  background: radial-gradient(90% 140% at 50% 0%, rgba(255,255,255,.06), rgba(0,0,0,0) 60%) #000;
+  border-top: 1px solid rgba(255,255,255,.08);
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  opacity: 0;
+  transform: translateY(8px);
+  transition: opacity .9s ease, transform .9s ease; /* 一度だけフェード */
+}
+
+.closing-slate:not(.cinema-bg)::before{
+  content:"";
+  position:absolute; inset:0;
+  pointer-events:none;
+  mask-image: radial-gradient(120% 60% at 50% -10%, rgba(255,255,255,.45), transparent 60%);
+  background: linear-gradient(180deg, rgba(255,255,255,.08), rgba(255,255,255,0));
+}
+
+.closing-slate .cm-main{
+  font-family: "Cinzel","Noto Serif JP",serif;
+  font-size: clamp(20px, 4.2vw, 32px);
+  letter-spacing: .06em;
+  color: #f1f1f1;
+  margin: 0 0 6px;
+}
+
+.closing-slate .cm-sub{
+  padding: 6vh 10vw;
+  font-family: "Noto Serif JP",serif;
+  font-size: clamp(18px, 3vw, 16px);
+  color: #d8d8d8;
+  letter-spacing: .04em;
+  margin: 0;
+  opacity: .9;
+}
+
+/* 表示トリガー時にだけ出現 */
+.closing-slate.is-show{
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* --- Cinema Spotlight for Closing Message --- */
+:root{
+  /* 濃さのノブ（数値を下げるほど控えめ） */
+  --cm-beam1: .16;   /* 右上の強いビーム */
+  --cm-beam2: .10;   /* 左上の弱いビーム */
+  --cm-vignette: .08;/* 上からのビネット */
+  --cm-hue: 40;      /* 40=温かいグレージュ / 210=寒色ブルー系 */
+}
+
+/* ベースは既存の .closing-slate をそのまま活かす */
+.closing-slate.cinema-bg{
+  position: relative;
+  background: #000;              /* 黒ベースに光を足す */
+  overflow: hidden;
+}
+
+/* スポットライト(背景レイヤー) */
+.closing-slate.cinema-bg::before{
+  content:"";
+  position:absolute; inset:0;
+  pointer-events:none;
+  background:
+    radial-gradient(120% 80% at 75% -10%,
+      hsla(var(--cm-hue), 90%, 88%, var(--cm-beam1)), transparent 60%),
+    radial-gradient(120% 80% at 20% -15%,
+      hsla(var(--cm-hue), 85%, 85%, var(--cm-beam2)), transparent 58%),
+    linear-gradient(180deg, rgba(0,0,0,var(--cm-vignette)), transparent 40%);
+}
+
+/* モバイルは少し弱める（くどさ防止） */
+@media (max-width: 768px){
+  :root{ --cm-beam1:.11; --cm-beam2:.07; --cm-vignette:.06; }
+}
+
+/* 文字の可読性は担保（必要なら微弱なシャドウ） */
+.closing-slate .cm-main,
+.closing-slate .cm-sub{
+  text-shadow: 0 1px 2px rgba(0,0,0,.35);
+}
+
+
+/* 動きを望まないユーザーには即表示 */
+@media (prefers-reduced-motion: reduce){
+  .closing-slate{ opacity:1; transform:none; transition:none; }
+}
+
+
+
+/* =======================
+   レスポンシブ調整
+======================= */
+@media (max-width: 1024px) {
+  #main-content { max-width: 95%; padding: 6vh 4vw; }
+  .poster-carousel, .works { max-width: 100%; }
+}
+@media (max-width: 600px) {
+  #main-content { max-width: 100%; padding: 5vh 3vw; }
+  .poster-carousel { flex-direction: column; gap: 20px; }
+}
+
+
+/* =======================
+   Mobile Adjustment (Non-destructive)
+======================= */
+@media (max-width: 768px) {
+
+  header {
+    padding: 12px 4%;
+  }
+
+  header h1 {
+    font-size: 1.6rem;
+    padding-left: 10px;
+    border-left-width: 3px;
+  }
+
+  :root {
+    --header-h: 96px;
+  }
+
+  .poster-carousel {
+    height: 360px;
+  }
+
+  .poster-slide.active {
+    transform: translate(-50%, -50%) scale(1.05);
+  }
+
+  .poster-slide.prev {
+    transform: translate(-140%, -50%) scale(0.8);
+  }
+
+  .poster-slide.next {
+    transform: translate(40%, -50%) scale(0.8);
+  }
+
+  .view-btn {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+    pointer-events: auto;
+  }
+
+  #profile h2 {
+    font-size: 2.2rem;
+  }
+
+  #profile .cast-name {
+    font-size: 2rem;
+  }
+
+  .review.catchcopy .copy-main {
+    font-size: 1.4rem;
+  }
+
+  .review.catchcopy .copy-sub {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .poster-slide.prev {
+    transform: translate(-150%, -50%) scale(0.78);
+  }
+  .poster-slide.next {
+    transform: translate(50%, -50%) scale(0.78);
+  }
+}
