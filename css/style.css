@@ -725,11 +725,23 @@ text-shadow:
   }
 
   .timeline li::before {
-    display: none;
+    content: '';
+    display: inline-block; /* ブロックじゃなく inline-block */
+    width: 10px;
+    height: 10px;
+    margin-right: 0.6rem;
+    border-radius: 50%;
+    background: radial-gradient(circle, #fff8dc 30%, #E1C87D 60%, #a67c00 100%);
+    vertical-align: middle; /* 行中央に寄せる */
+    position: relative;
+    top: 0.2rem;
+    box-shadow: 0 0 6px rgba(255, 215, 0, 0.6);
   }
 
   .timeline li {
     padding-left: 0;
+    gap: 0.6rem;
+    align-items: flex-start;
   }
 }
 
@@ -1140,3 +1152,4 @@ html, body { scroll-padding-top: var(--header-h); }
     transform: translate(50%, -50%) scale(0.78);
   }
 }
+
