@@ -742,26 +742,28 @@ text-shadow:
     box-shadow: 0 0 6px rgba(255, 215, 0, 0.6);
   }
 
+
+     /* li を縦並びに */
   .timeline li {
-    position: relative; /* li を基準に絶対配置 */
-    padding-left: 1.8rem; /* 丸分のスペース確保 */
-    gap: 0.6rem;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding-left: 1.8rem; /* 丸アイコン分のスペース */
+    gap: 0.3rem;
+    margin-top: 0;
   }
 
-   .timeline .year {
-    margin-left: -8.5vw !important;
-    padding-right: 0.5vw;
-    margin-top: -5px;
+  /* 年（.year / .last_year）のPC用マージンをリセット */
+  .timeline li .year,
+  .timeline li .last_year {
+    margin-left: 0 !important;
+    margin-top: 0;
   }
 
-   .timeline li .last_year {
-   margin-left: -14vw !important;
-  }
-
-
-   .timeline .timeline_txt {
-    margin-left: -31.5vw !important;
-    margin-top: 30px !important;
+  /* 文章を左揃え */
+  .timeline li .timeline_txt {
+    margin-left: 0 !important;
+    margin-top: 0.5rem !important;
     text-align: left !important;
     line-height: 1.7 !important;
     font-size: 4vw !important;
@@ -1179,6 +1181,7 @@ html, body { scroll-padding-top: var(--header-h); }
     transform: translate(50%, -50%) scale(0.78);
   }
 }
+
 
 
 
