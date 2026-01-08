@@ -756,13 +756,14 @@ text-shadow:
   /* 年（.year / .last_year）のPC用マージンをリセット */
   .timeline li .year,
   .timeline li .last_year {
-    margin-left: 0 !important;
-    margin-top: 0;
+    margin-left: -5vw !important;
+    margin-top: -5px;
+    min-width: 0; 
   }
 
   /* 文章を左揃え */
   .timeline li .timeline_txt {
-    margin-left: 0 !important;
+    margin-left: -5vw !important;
     margin-top: 0.5rem !important;
     text-align: left !important;
     line-height: 1.7 !important;
@@ -1181,6 +1182,7 @@ html, body { scroll-padding-top: var(--header-h); }
     transform: translate(50%, -50%) scale(0.78);
   }
 }
+
 
 
 
