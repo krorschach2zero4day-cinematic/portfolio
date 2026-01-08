@@ -748,6 +748,10 @@ text-shadow:
     margin-top: -5px;
   }
 
+   .timeline li .year:last-child {
+   margin-left: -10vw;
+  }
+
    .timeline li span:last-child {
     color: #fff8dc;
     /* font-size: none;
@@ -1170,6 +1174,7 @@ html, body { scroll-padding-top: var(--header-h); }
     transform: translate(50%, -50%) scale(0.78);
   }
 }
+
 
 
 
