@@ -763,7 +763,7 @@ text-shadow:
     margin-top: 30px;
     text-align: left;
     line-height: 1.7;
-    font-size: 4vw;
+    font-size: 3.7vw;
   }
 }
 
@@ -1174,6 +1174,7 @@ html, body { scroll-padding-top: var(--header-h); }
     transform: translate(50%, -50%) scale(0.78);
   }
 }
+
 
 
 
