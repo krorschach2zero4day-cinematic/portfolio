@@ -749,13 +749,13 @@ text-shadow:
   }
 
    .timeline .year {
-    margin-left: -8.5vw;
+    margin-left: -8.5vw !important;
     padding-right: 0.5vw;
     margin-top: -5px;
   }
 
    .timeline li .last_year {
-   margin-left: -14vw;
+   margin-left: -14vw !important;
   }
 
 
@@ -1179,6 +1179,7 @@ html, body { scroll-padding-top: var(--header-h); }
     transform: translate(50%, -50%) scale(0.78);
   }
 }
+
 
 
 
