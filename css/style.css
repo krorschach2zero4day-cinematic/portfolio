@@ -754,7 +754,7 @@ text-shadow:
     margin-top: -5px;
   }
 
-   .timeline li .year:last-child {
+   .timeline li .last_year {
    margin-left: -14vw;
   }
 
@@ -1179,6 +1179,7 @@ html, body { scroll-padding-top: var(--header-h); }
     transform: translate(50%, -50%) scale(0.78);
   }
 }
+
 
 
 
