@@ -714,7 +714,7 @@ text-shadow:
   }
 
    #profile .cast-bio {
-    font-size: 3.5vw;
+    font-size: 4vw;
     line-height: 1.9;
     margin-top: 1.5rem;
   }
@@ -1175,6 +1175,7 @@ html, body { scroll-padding-top: var(--header-h); }
     transform: translate(50%, -50%) scale(0.78);
   }
 }
+
 
 
 
