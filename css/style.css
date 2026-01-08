@@ -1165,6 +1165,10 @@ html, body { scroll-padding-top: var(--header-h); }
     width: 24px;        /* ← 劇的に改善 */
     opacity: 0.35;
   }
+
+.closing-slate .cm-sub {
+ font-size: clamp(15px, 3vw, 16px);
+}
 }
 
 @media (max-width: 480px) {
@@ -1175,6 +1179,7 @@ html, body { scroll-padding-top: var(--header-h); }
     transform: translate(50%, -50%) scale(0.78);
   }
 }
+
 
 
 
