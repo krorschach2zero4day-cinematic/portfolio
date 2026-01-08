@@ -727,7 +727,7 @@ text-shadow:
   .timeline li::before {
     content: '';
     position: absolute; /* ← 絶対配置 */
-    left: 0;
+    left: -23px;
     top: 0.5em;        /* li のテキスト中央に調整 */
     width: 10px;
     height: 10px;
@@ -740,6 +740,12 @@ text-shadow:
     position: relative; /* li を基準に絶対配置 */
     padding-left: 1.8rem; /* 丸分のスペース確保 */
     gap: 0.6rem;
+  }
+
+   .timeline .year {
+    margin-left: -8.5vw;
+    padding-right: 0.5vw;
+    margin-top: -5px;
   }
 }
 
@@ -1150,5 +1156,6 @@ html, body { scroll-padding-top: var(--header-h); }
     transform: translate(50%, -50%) scale(0.78);
   }
 }
+
 
 
