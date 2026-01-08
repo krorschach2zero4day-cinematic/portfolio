@@ -760,11 +760,11 @@ text-shadow:
 
 
    .timeline .timeline_txt {
-    margin-left: -31.5vw;
-    margin-top: 30px;
-    text-align: left;
-    line-height: 1.7;
-    font-size: 4vw;
+    margin-left: -31.5vw !important;
+    margin-top: 30px !important;
+    text-align: left !important;
+    line-height: 1.7 !important;
+    font-size: 4vw !important;
   }
 }
 
@@ -1175,6 +1175,7 @@ html, body { scroll-padding-top: var(--header-h); }
     transform: translate(50%, -50%) scale(0.78);
   }
 }
+
 
 
 
