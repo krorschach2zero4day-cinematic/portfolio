@@ -747,6 +747,12 @@ text-shadow:
     padding-right: 0.5vw;
     margin-top: -5px;
   }
+
+   .timeline .timeline_txt {
+    margin-left: -8.5vw;
+    padding-right: 0.5vw;
+    margin-top: -10px;
+  }
 }
 
 
@@ -1156,6 +1162,7 @@ html, body { scroll-padding-top: var(--header-h); }
     transform: translate(50%, -50%) scale(0.78);
   }
 }
+
 
 
 
