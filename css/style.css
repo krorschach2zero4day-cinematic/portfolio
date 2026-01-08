@@ -748,10 +748,18 @@ text-shadow:
     margin-top: -5px;
   }
 
+   .timeline li span:last-child {
+    color: #fff8dc;
+    /* font-size: none;
+     line-height: none;*/
+  }
+
    .timeline .timeline_txt {
-    margin-left: -8.5vw;
-    padding-right: 0.5vw;
-    margin-top: -10px;
+    margin-left: -31.5vw;
+    margin-top: 30px;
+    text-align: left;
+    line-height: 1.7;
+    font-size: 4vw;
   }
 }
 
@@ -1162,6 +1170,7 @@ html, body { scroll-padding-top: var(--header-h); }
     transform: translate(50%, -50%) scale(0.78);
   }
 }
+
 
 
 
