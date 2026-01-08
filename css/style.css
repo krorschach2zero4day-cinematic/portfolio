@@ -754,8 +754,8 @@ text-shadow:
 
    .timeline li span:last-child {
     color: #fff8dc;
-    font-size: none !important;
-    line-height: none !important;
+    font-size: 1rem !important;
+    line-height: 2.4 !important;
   }
 
    .timeline .timeline_txt {
@@ -1174,6 +1174,7 @@ html, body { scroll-padding-top: var(--header-h); }
     transform: translate(50%, -50%) scale(0.78);
   }
 }
+
 
 
 
