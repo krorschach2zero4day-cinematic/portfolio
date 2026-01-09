@@ -16,6 +16,10 @@ body {
   overflow-x: hidden;
 }
 
+.sp {
+   display: none;
+}
+
 /* =======================
    ヘッダー
    WP化時 → header.php
@@ -1104,6 +1108,10 @@ html, body { scroll-padding-top: var(--header-h); }
     border-bottom: 1px solid rgba(255,255,255,0.15);
   }
 
+    .sp {
+    display: block;
+  }
+
   .profile-full-image img {
     width: 100%;
     max-width: 100vw;
@@ -1182,6 +1190,7 @@ html, body { scroll-padding-top: var(--header-h); }
     transform: translate(50%, -50%) scale(0.78);
   }
 }
+
 
 
 
