@@ -258,4 +258,12 @@ body::after{
 @keyframes filmMove {
   from { background-position: 0 0; }
   to   { background-position: 0 80px; }
+
+}
+
+@media (max-width: 768px) {
+.credits {
+  font-size: 3.5vw;
+  line-height: 1;
+  margin-top: -15vw;
 }
