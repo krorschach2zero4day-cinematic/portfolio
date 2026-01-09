@@ -1,0 +1,155 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>パッケージデザイン制作｜Work Detail</title>
+  <link rel="stylesheet" href="../css/screen.css">
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700&family=Noto+Serif+JP:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<header class="theater-header">
+  <h1>Now Showing</h1>
+</header>
+
+<main class="work-detail">
+  <div class="work-split">
+
+    <!-- 左：テキスト -->
+    <aside class="work-text">
+      <h2 class="work-title">映像教材用パッケージデザイン｜『健康長者の食習慣』</h2>
+
+      <section>
+        <h3>概要</h3>
+        <p>日々の食習慣を見直すことで将来の医療費・不調・不安を<br>減らしていくという考え方を、わかりやすく解説したパッケージデザイン。</p>
+      </section>
+
+      <section>
+        <h3>説明</h3>
+        <p>全体の基調色には、深みのある赤を採用。<br>活力・生命力・情熱を象徴しつつ、過度に派手にならないトーンに抑えることで、<br>「健康」「長寿」「積み重ね」というテーマに重厚感と信頼感を持たせています。<br>監修者の信頼性を前面に出したレイアウトと専門性は保ちつつ、<br>「特別な人のための教材」ではなく誰の生活にも関係するテーマとして<br>感じられるよう工夫しています。<br>“健康を貯める”という新しい価値観を、信頼と温度感のあるデザインにしました。<br><br></p>
+      </section>
+    </aside>
+
+    <!-- 右：スクリーン（LP用：full-scroll） -->
+    <div class="work-screen full-scroll">
+      <div class="screen-frame">
+        <div class="screen-inner">
+<div class="screen-scroll">
+
+  <!-- モックアップ -->
+   <div class="lp-section">
+    <h3 class="caption">通常版</h3>
+  <img src="../img/hn_mockup.png" alt="モックアップ" class="img-mockup">
+  </div>
+<br>
+  <!-- PC全体図 -->
+  <div class="lp-section">
+    <h3 class="caption">通常版｜裏面</h3>
+    <img src="../img/fn_dvd_ura.jpg" alt="LP PC版全体図" class="img-lp pc">
+  </div>
+
+</div>
+
+        </div><!-- /.screen-inner -->
+      </div><!-- /.screen-frame -->
+    </div><!-- /.work-screen -->
+
+  </div><!-- /.work-split -->
+</main>
+
+<!-- 下部ナビ -->
+<section class="work-navigation">
+  <h2>Other Works</h2>
+<div class="work-thumbs">
+  <div class="trailer-thumb">
+    <a href="../dvd1/index.html">
+      <div class="thumb-wrapper">
+        <img src="../img/sekino_mockup.png" alt="作品2">
+      </div>
+    </a>
+    <div class="trailer-title">『全融合整体』|通常版</div>
+  </div>
+  <div class="trailer-thumb">
+    <a href="../dvd1/index.html">
+      <div class="thumb-wrapper">
+        <img src="../img/sekino_onetime.png" alt="作品3">
+      </div>
+    </a>
+        <div class="trailer-title">『全融合整体』|特典版</div>
+  </div>
+
+    <div class="trailer-thumb">
+    <a href="../dvd2/index.html">
+      <div class="thumb-wrapper">
+        <img src="../img/sakata_mockup.png" alt="作品2">
+      </div>
+    </a>
+    <div class="trailer-title">『気泡爽楽』|通常版</div>
+  </div>
+  <div class="trailer-thumb">
+    <a href="../dvd2/index.html">
+      <div class="thumb-wrapper">
+        <img src="../img/sakata_onetime.png" alt="作品3">
+      </div>
+    </a>
+   <div class="trailer-title">『気泡爽楽』|特典版</div>
+  </div>
+</div>
+
+<div class="back_inner">
+<div class="btn_icon">
+  <div class="back-btn">
+    <a href="../work_index.html" class="btn">Back to view all</a>
+  </div>
+
+      <!-- トップへ戻る -->
+    <div class="view-all-wrapper">
+<a class="view-all-btn" href="../../cinematic_theater.html?skipIntro=1">
+  PORTFOLIOトップへ戻る
+</a>
+    </div>
+    </div>
+    </div>
+</section>
+
+
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <script src="js/script.js"></script>
+    <!-------------------------------------------------
+   画像保護
+    -------------------------------------------------->
+  <script>
+    $(function () {
+      var urlParam = location.search.substring(1);
+      if (urlParam) {
+        var param = urlParam.split("&");
+        var paramArray = {}; // オブジェクトに修正
+        for (let i = 0; i < param.length; i++) {
+          var paramItem = param[i].split("=");
+          paramArray[paramItem[0]] = paramItem[1];
+        }
+        var img = paramArray.img || ""; // imgが未定義の場合に備える
+        console.log(img);
+      }
+
+      if (!(img === "on")) {
+        $("img").on("contextmenu", function (e) {
+          return false;
+        });
+        document.ondragstart = function () {
+          return false;
+        };
+        $("img").css({
+          "-webkit-touch-callout": "none",
+          "-webkit-user-select": "none",
+          "-moz-touch-callout": "none",
+          "-moz-user-select": "none",
+          "touch-callout": "none",
+          "user-select": "none",
+        });
+      }
+    });
+  </script>
+</body>
+</html>

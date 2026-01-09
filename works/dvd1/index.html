@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>パッケージデザイン制作｜Work Detail</title>
+  <link rel="stylesheet" href="../css/screen.css">
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700&family=Noto+Serif+JP:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<header class="theater-header">
+  <h1>Now Showing</h1>
+</header>
+
+<main class="work-detail">
+  <div class="work-split">
+
+    <!-- 左：テキスト -->
+    <aside class="work-text">
+      <h2 class="work-title">映像教材用パッケージデザイン｜『全融合整体』</h2>
+
+      <section>
+        <h3>概要</h3>
+        <p>専門的で権威ある整体技術を教材化し、<br>知識と技術が融合して“ゴッドハンド”を宿す世界観を表現したパッケージデザイン。</p>
+      </section>
+
+      <section>
+        <h3>説明</h3>
+        <p>視認性を優先し、<br>施術者の手に新たな力が宿る世界観を描いたパッケージデザインです。<br>通常版では黄金の光をまとわせ、「ゴッドハンドが宿る瞬間」を象徴。<br>白基調とのコントラストで清潔感と高い信頼性を表現しました。<br><br>特典版は緑を基調に、血を連想させる赤や冷たい青を避け、<br>生命力や自然治癒力を想起させる色味を選定。<br>視認性と神秘性を兼ね備えた仕上がりとしています。<br><br>両デザインを通じ、筋肉や神経の知見を融合させた<br>「知識と技術が手に宿る世界観」を色彩の違いで訴求しました。</p>
+      </section>
+    </aside>
+
+    <!-- 右：スクリーン（LP用：full-scroll） -->
+    <div class="work-screen full-scroll">
+      <div class="screen-frame">
+        <div class="screen-inner">
+<div class="screen-scroll">
+
+  <!-- モックアップ -->
+   <div class="lp-section">
+    <h3 class="caption">通常版</h3>
+  <img src="../img/sekino_mockup.png" alt="モックアップ" class="img-mockup">
+  </div>
+<br>
+  <!-- PC全体図 -->
+  <div class="lp-section">
+    <h3 class="caption">通常版｜裏面</h3>
+    <img src="../img/sekino_dvd_ura.png" alt="LP PC版全体図" class="img-lp pc">
+  </div>
+<br>
+  <!-- SP全体図 -->
+  <div class="lp-section">
+    <h3 class="caption">特典版</h3>
+    <img src="../img/sekino_onetime.png" alt="モックアップ" class="img-mockup">
+  </div>
+  <br>
+    <div class="lp-section">
+    <h3 class="caption">特典版｜裏面</h3>
+    <img src="../img/sekino_one_ura.png" alt="LP PC版全体図" class="img-lp pc">
+  </div>
+
+</div>
+
+        </div><!-- /.screen-inner -->
+      </div><!-- /.screen-frame -->
+    </div><!-- /.work-screen -->
+
+  </div><!-- /.work-split -->
+</main>
+
+<!-- 下部ナビ -->
+<section class="work-navigation">
+  <h2>Other Works</h2>
+<div class="work-thumbs">
+
+  <div class="trailer-thumb">
+    <a href="../dvd2/index.html">
+      <div class="thumb-wrapper">
+        <img src="../img/sakata_mockup.png" alt="作品2">
+      </div>
+    </a>
+    <div class="trailer-title">『気泡爽楽』|通常版</div>
+  </div>
+  <div class="trailer-thumb">
+    <a href="../dvd2/index.html">
+      <div class="thumb-wrapper">
+        <img src="../img/sakata_onetime.png" alt="作品3">
+      </div>
+    </a>
+   <div class="trailer-title">『気泡爽楽』|特典版</div>
+  </div>
+
+    <div class="trailer-thumb">
+    <a href="../dvd3/index.html">
+      <div class="thumb-wrapper">
+        <img src="../img/hn_mockup.png" alt="作品2">
+      </div>
+    </a>
+    <div class="trailer-title">『健康長者の食習慣』|通常版</div>
+  </div>
+</div>
+
+<div class="back_inner">
+<div class="btn_icon">
+  <div class="back-btn">
+    <a href="../work_index.html" class="btn">Back to view all</a>
+  </div>
+
+      <!-- トップへ戻る -->
+    <div class="view-all-wrapper">
+<a class="view-all-btn" href="../../cinematic_theater.html?skipIntro=1">
+  PORTFOLIOトップへ戻る
+</a>
+    </div>
+    </div>
+    </div>
+</section>
+
+
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <script src="js/script.js"></script>
+    <!-------------------------------------------------
+   画像保護
+    -------------------------------------------------->
+  <script>
+    $(function () {
+      var urlParam = location.search.substring(1);
+      if (urlParam) {
+        var param = urlParam.split("&");
+        var paramArray = {}; // オブジェクトに修正
+        for (let i = 0; i < param.length; i++) {
+          var paramItem = param[i].split("=");
+          paramArray[paramItem[0]] = paramItem[1];
+        }
+        var img = paramArray.img || ""; // imgが未定義の場合に備える
+        console.log(img);
+      }
+
+      if (!(img === "on")) {
+        $("img").on("contextmenu", function (e) {
+          return false;
+        });
+        document.ondragstart = function () {
+          return false;
+        };
+        $("img").css({
+          "-webkit-touch-callout": "none",
+          "-webkit-user-select": "none",
+          "-moz-touch-callout": "none",
+          "-moz-user-select": "none",
+          "touch-callout": "none",
+          "user-select": "none",
+        });
+      }
+    });
+  </script>
+</body>
+</html>
