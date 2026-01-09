@@ -1,0 +1,174 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>その他制作｜Work Detail</title>
+  <link rel="stylesheet" href="../css/screen.css">
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700&family=Noto+Serif+JP:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<header class="theater-header">
+  <h1>Now Showing</h1>
+</header>
+
+<main class="work-detail">
+  <div class="work-split">
+
+    <!-- 左：テキスト -->
+    <aside class="work-text">
+      <h2 class="work-title">HP制作｜保育園</h2>
+
+  <section>
+  <h3>概要</h3>
+  <p>地域の保護者が「園の雰囲気と大切にしていること」を短時間で把握できるよう設計した保育園サイトです。</p>
+</section>
+
+      <section>
+        <h3>説明</h3>
+        <p>親が子供を入園するにあたって入園選びをする際にこの保育園の魅力や理念を紹介し、知ってもらうのが目的です。<br>事前に保育園を選ぶ優先順位を調べた上で「見出し→要点→写真」の順で情報を圧縮し、読みやすさを確保。<br>食材・衛生・保育体制など不安になりやすい点は写真や短文で先回りして可視化し、温もりを演出しました。</p>
+      </section>
+    </aside>
+
+    <!-- 右：スクリーン（LP用：full-scroll） -->
+    <div class="work-screen full-scroll">
+      <div class="screen-frame">
+        <div class="screen-inner">
+<div class="screen-scroll">
+
+  <!-- モックアップ -->
+  <img src="../img/hoikuenn_lp_mock.png" alt="モックアップ" class="img-mockup">
+<br>
+  <!-- PC全体図 -->
+  <div class="lp-section">
+    <h3 class="caption">PC 全体図</h3>
+    <img src="../img/hoikuen_lp_pc.png" alt="LP PC版全体図" class="img-lp pc">
+  </div>
+<br>
+  <!-- SP全体図 -->
+  <div class="lp-section">
+    <h3 class="caption">SP 全体図</h3>
+    <img src="../img/hoikuen_lp_sp.png" alt="LP SP版全体図" class="img-lp sp">
+  </div>
+
+</div>
+
+        </div><!-- /.screen-inner -->
+      </div><!-- /.screen-frame -->
+    </div><!-- /.work-screen -->
+
+  </div><!-- /.work-split -->
+  <div class="cinema-light left"></div>
+  <div class="cinema-light right"></div>
+</main>
+
+<!-- 下部ナビ -->
+<section class="work-navigation">
+  <div class="top-light"></div>
+  <h2>Other Works</h2>
+
+
+<div class="work-thumbs">
+  <div class="trailer-thumb">
+    <a href="../other1/index.html">
+      <div class="thumb-wrapper">
+        <img src="../img/pet_lp_mock.png" alt="作品2">
+      </div>
+    </a>
+    <div class="trailer-title">LP制作 『ペット自動給餌器』</div>
+  </div>
+
+ <div class="trailer-thumb">
+    <a href="../other3/index.html">
+      <div class="thumb-wrapper">
+        <img src="../img/restaurant_lp_mock.png" alt="HP制作 『飲食店HP』">
+      </div>
+    </a>
+    <div class="trailer-title">教材LP 『ZERO-G TOUCH®』</div>
+  </div>
+
+  <div class="trailer-thumb">
+    <a href="../other4/index.html">
+      <div class="thumb-wrapper">
+        <img src="../img/ロゴ.png" alt="ロゴ">
+      </div>
+    </a>
+    <div class="trailer-title">ロゴデザイン</div>
+  </div>
+
+    <div class="trailer-thumb">
+    <a href="../other5/index.html">
+      <div class="thumb-wrapper">
+        <img src="../img/top.png" alt="top画像">
+      </div>
+    </a>
+    <div class="trailer-title">架空『アートポスター』</div>
+  </div>
+
+  <div class="trailer-thumb">
+    <a href="../other6/index.html">
+      <div class="thumb-wrapper">
+        <img src="../img/movie_poster.jpg" alt="top画像">
+      </div>
+    </a>
+    <div class="trailer-title">架空映画ポスター『終の流星』</div>
+  </div>
+</div>
+
+<div class="back_inner">
+<div class="btn_icon">
+  <div class="back-btn">
+    <a href="../work_index.html" class="btn">Back to view all</a>
+  </div>
+
+      <!-- トップへ戻る -->
+    <div class="view-all-wrapper">
+<a class="view-all-btn" href="../../cinematic_theater.html?skipIntro=1">
+  PORTFOLIOトップへ戻る
+</a>
+    </div>
+    </div>
+    </div>
+</section>
+
+
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <script src="js/script.js"></script>
+    <!-------------------------------------------------
+   画像保護
+    -------------------------------------------------->
+  <script>
+    $(function () {
+      var urlParam = location.search.substring(1);
+      if (urlParam) {
+        var param = urlParam.split("&");
+        var paramArray = {}; // オブジェクトに修正
+        for (let i = 0; i < param.length; i++) {
+          var paramItem = param[i].split("=");
+          paramArray[paramItem[0]] = paramItem[1];
+        }
+        var img = paramArray.img || ""; // imgが未定義の場合に備える
+        console.log(img);
+      }
+
+      if (!(img === "on")) {
+        $("img").on("contextmenu", function (e) {
+          return false;
+        });
+        document.ondragstart = function () {
+          return false;
+        };
+        $("img").css({
+          "-webkit-touch-callout": "none",
+          "-webkit-user-select": "none",
+          "-moz-touch-callout": "none",
+          "-moz-user-select": "none",
+          "touch-callout": "none",
+          "user-select": "none",
+        });
+      }
+    });
+  </script>
+</body>
+</html>

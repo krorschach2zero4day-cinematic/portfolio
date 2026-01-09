@@ -1,0 +1,155 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>販促デザイン制作｜Work Detail</title>
+  <link rel="stylesheet" href="../css/screen.css">
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700&family=Noto+Serif+JP:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<header class="theater-header">
+  <h1>Now Showing</h1>
+</header>
+
+<main class="work-detail">
+  <div class="work-split">
+
+    <!-- 左：テキスト -->
+    <aside class="work-text">
+      <h2 class="work-title">販促デザイン制作｜『カラダの帝王学』特典冊子表紙</h2>
+
+  <section>
+  <h3>概要</h3>
+  <p>症状ごとのアプローチ方法を体系的にまとめた特典冊子です。<br>治療家や素人でも実践の場で活用できるよう、インパクトの印象を与えるレイアウトにしています。</p>
+</section>
+
+      <section>
+        <h3>説明</h3>
+        <p>表紙では、“帝王学”という言葉が持つ威厳と神秘性を表現するために、<br>金色の光と宇宙を思わせる背景を使用しました。<br>中央の手のイラストは「力を掴む」「真理を手にする」という<br>象徴であり、強さと知恵を感じさせます。<br>筆文字調のタイトルで力強さを演出し、全体として専門的で重厚感のある印象に仕上げました。</p>
+      </section>
+    </aside>
+
+    <!-- 右：スクリーン（LP用：full-scroll） -->
+    <div class="work-screen full-scroll">
+      <div class="screen-frame">
+        <div class="screen-inner">
+<div class="screen-scroll">
+
+  <!-- モックアップ -->
+  <img src="../img/onda_tokuten.png" alt="モックアップ" class="img-flyer">
+</div>
+
+        </div><!-- /.screen-inner -->
+      </div><!-- /.screen-frame -->
+    </div><!-- /.work-screen -->
+
+  </div><!-- /.work-split -->
+  <div class="cinema-light left"></div>
+  <div class="cinema-light right"></div>
+</main>
+
+<!-- 下部ナビ -->
+<section class="work-navigation">
+  <div class="top-light"></div>
+  <h2>Other Works</h2>
+
+
+<div class="work-thumbs">
+  <div class="trailer-thumb">
+    <a href="../promo1/index.html">
+      <div class="thumb-wrapper">
+        <img src="../img/flyer_1.png" alt="販促デザイン ハンバーガー店オープンチラシ">
+      </div>
+    </a>
+    <div class="trailer-title">販促デザイン ハンバーガー店オープンチラシ</div>
+  </div>
+
+     <div class="trailer-thumb">
+    <a href="../promo3/index.html">
+      <div class="thumb-wrapper">
+        <img src="../img/miyazaki_tokuten.png" alt="販促デザイン 『THE BRAIN UNLIMITED』">
+      </div>
+    </a>
+    <div class="trailer-title">販促デザイン 『THE BRAIN UNLIMITED』</div>
+  </div>
+
+ <div class="trailer-thumb">
+    <a href="../promo4/index.html">
+      <div class="thumb-wrapper">
+        <img src="../img/yonezawa_img.jpg" alt="販促デザイン 『らせん零』講師紹介画像">
+      </div>
+    </a>
+    <div class="trailer-title">販促デザイン 『らせん零』講師紹介画像</div>
+  </div>
+
+ 
+  <div class="trailer-thumb">
+    <a href="../promo5/index.html">
+      <div class="thumb-wrapper">
+        <img src="../img/3-1.jpg" alt="販促デザイン 『小波津サロン』">
+      </div>
+    </a>
+    <div class="trailer-title">販促デザイン 『小波津サロン』</div>
+  </div>
+
+
+</div>
+
+<div class="back_inner">
+<div class="btn_icon">
+  <div class="back-btn">
+    <a href="../work_index.html" class="btn">Back to view all</a>
+  </div>
+
+      <!-- トップへ戻る -->
+    <div class="view-all-wrapper">
+<a class="view-all-btn" href="../../cinematic_theater.html?skipIntro=1">
+  PORTFOLIOトップへ戻る
+</a>
+    </div>
+    </div>
+    </div>
+</section>
+
+
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <script src="js/script.js"></script>
+    <!-------------------------------------------------
+   画像保護
+    -------------------------------------------------->
+  <script>
+    $(function () {
+      var urlParam = location.search.substring(1);
+      if (urlParam) {
+        var param = urlParam.split("&");
+        var paramArray = {}; // オブジェクトに修正
+        for (let i = 0; i < param.length; i++) {
+          var paramItem = param[i].split("=");
+          paramArray[paramItem[0]] = paramItem[1];
+        }
+        var img = paramArray.img || ""; // imgが未定義の場合に備える
+        console.log(img);
+      }
+
+      if (!(img === "on")) {
+        $("img").on("contextmenu", function (e) {
+          return false;
+        });
+        document.ondragstart = function () {
+          return false;
+        };
+        $("img").css({
+          "-webkit-touch-callout": "none",
+          "-webkit-user-select": "none",
+          "-moz-touch-callout": "none",
+          "-moz-user-select": "none",
+          "touch-callout": "none",
+          "user-select": "none",
+        });
+      }
+    });
+  </script>
+</body>
+</html>

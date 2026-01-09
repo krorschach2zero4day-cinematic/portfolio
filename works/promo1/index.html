@@ -1,0 +1,155 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>販促デザイン制作｜Work Detail</title>
+  <link rel="stylesheet" href="../css/screen.css">
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700&family=Noto+Serif+JP:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<header class="theater-header">
+  <h1>Now Showing</h1>
+</header>
+
+<main class="work-detail">
+  <div class="work-split">
+
+    <!-- 左：テキスト -->
+    <aside class="work-text">
+      <h2 class="work-title">販促デザイン制作｜ハンバーガー店オープンチラシ</h2>
+
+  <section>
+  <h3>概要</h3>
+  <p>キャンペーン情報を大きく打ち出すことで、初来店の動機づけを狙った<br>新スタイルのハンバーガーショップ「BURGER HOUSE」のオープン告知チラシです。</p>
+</section>
+
+      <section>
+        <h3>説明</h3>
+        <p>このチラシでは、「NEW OPEN」の文字を大きく配置し、日付や時間を明確に示すことで、一目で新店舗オープンを伝えられるデザインを意識し、全体に洗練された印象を与えています。<br>メインビジュアルには、ツヤのあるハンバーガーに調整加工し、食欲を刺激する鮮やかな色合いで「おいしさ」を直感的に伝えました。<br>ブランドの信頼感とわかりやすさを両立させて全体を通して、清潔感とスタイリッシュさを意識しながら、新しいスタイルの魅力を伝える構成としました。</p>
+      </section>
+    </aside>
+
+    <!-- 右：スクリーン（LP用：full-scroll） -->
+    <div class="work-screen full-scroll">
+      <div class="screen-frame">
+        <div class="screen-inner">
+<div class="screen-scroll">
+
+  <!-- モックアップ -->
+  <img src="../img/flyer_1.png" alt="モックアップ" class="img-flyer">
+</div>
+
+        </div><!-- /.screen-inner -->
+      </div><!-- /.screen-frame -->
+    </div><!-- /.work-screen -->
+
+  </div><!-- /.work-split -->
+  <div class="cinema-light left"></div>
+  <div class="cinema-light right"></div>
+</main>
+
+<!-- 下部ナビ -->
+<section class="work-navigation">
+  <div class="top-light"></div>
+  <h2>Other Works</h2>
+
+
+<div class="work-thumbs">
+  <div class="trailer-thumb">
+    <a href="../promo2/index.html">
+      <div class="thumb-wrapper">
+        <img src="../img/onda_tokuten.png" alt="販促デザイン 『カラダの帝王学">
+      </div>
+    </a>
+    <div class="trailer-title">販促デザイン 『カラダの帝王学』</div>
+  </div>
+
+    <div class="trailer-thumb">
+    <a href="../promo3/index.html">
+      <div class="thumb-wrapper">
+        <img src="../img/miyazaki_tokuten.png" alt="販促デザイン 『THE BRAIN UNLIMITED』">
+      </div>
+    </a>
+    <div class="trailer-title">販促デザイン 『THE BRAIN UNLIMITED』</div>
+  </div>
+
+ <div class="trailer-thumb">
+    <a href="../promo4/index.html">
+      <div class="thumb-wrapper">
+        <img src="../img/yonezawa_img.jpg" alt="販促デザイン 『らせん零』講師紹介画像">
+      </div>
+    </a>
+    <div class="trailer-title">販促デザイン 『らせん零』講師紹介画像</div>
+  </div>
+
+ 
+  <div class="trailer-thumb">
+    <a href="../promo5/index.html">
+      <div class="thumb-wrapper">
+        <img src="../img/3-1.jpg" alt="販促デザイン 『小波津サロン』">
+      </div>
+    </a>
+    <div class="trailer-title">販促デザイン 『小波津サロン』</div>
+  </div>
+
+
+</div>
+
+<div class="back_inner">
+<div class="btn_icon">
+  <div class="back-btn">
+    <a href="../work_index.html" class="btn">Back to view all</a>
+  </div>
+
+      <!-- トップへ戻る -->
+    <div class="view-all-wrapper">
+<a class="view-all-btn" href="../../cinematic_theater.html?skipIntro=1">
+  PORTFOLIOトップへ戻る
+</a>
+    </div>
+    </div>
+    </div>
+</section>
+
+
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <script src="js/script.js"></script>
+    <!-------------------------------------------------
+   画像保護
+    -------------------------------------------------->
+  <script>
+    $(function () {
+      var urlParam = location.search.substring(1);
+      if (urlParam) {
+        var param = urlParam.split("&");
+        var paramArray = {}; // オブジェクトに修正
+        for (let i = 0; i < param.length; i++) {
+          var paramItem = param[i].split("=");
+          paramArray[paramItem[0]] = paramItem[1];
+        }
+        var img = paramArray.img || ""; // imgが未定義の場合に備える
+        console.log(img);
+      }
+
+      if (!(img === "on")) {
+        $("img").on("contextmenu", function (e) {
+          return false;
+        });
+        document.ondragstart = function () {
+          return false;
+        };
+        $("img").css({
+          "-webkit-touch-callout": "none",
+          "-webkit-user-select": "none",
+          "-moz-touch-callout": "none",
+          "-moz-user-select": "none",
+          "touch-callout": "none",
+          "user-select": "none",
+        });
+      }
+    });
+  </script>
+</body>
+</html>

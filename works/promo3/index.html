@@ -1,0 +1,155 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>販促デザイン制作｜Work Detail</title>
+  <link rel="stylesheet" href="../css/screen.css">
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700&family=Noto+Serif+JP:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<header class="theater-header">
+  <h1>Now Showing</h1>
+</header>
+
+<main class="work-detail">
+  <div class="work-split">
+
+    <!-- 左：テキスト -->
+    <aside class="work-text">
+      <h2 class="work-title">販促デザイン制作｜『THE BRAIN UNLIMITED』特典冊子表紙</h2>
+
+  <section>
+  <h3>概要</h3>
+  <p>講師自身が元ジョッキーとして培った「集中力」「感覚の研ぎ澄まし」「瞬時の判断力」といった経験をもとに構築された理論を、<br>8つのレベルで精度を高めるための特典冊子の表紙デザインです。</p>
+</section>
+
+      <section>
+        <h3>説明</h3>
+        <p>表紙では、“神経”と“馬”という二つの要素を融合させ、講師の経歴と<br>テーマの核心を一体化して表現しました。<br>馬のシルエットを神経やシナプスのような線で構成することで、「感覚の伝達」や「スピード」「直感的な反応力」を象徴。<br>黒を基調にブルーの光を差し込み、思考の拡張や覚醒を感じさせる近未来的な印象に仕上げています。<br>タイトルはシャープなフォントで構成し、理論と精神性の両立を視覚的に強調しました。</p>
+      </section>
+    </aside>
+
+    <!-- 右：スクリーン（LP用：full-scroll） -->
+    <div class="work-screen full-scroll">
+      <div class="screen-frame">
+        <div class="screen-inner">
+<div class="screen-scroll">
+
+  <!-- モックアップ -->
+  <img src="../img/miyazaki_tokuten.png" alt="モックアップ" class="img-flyer">
+</div>
+
+        </div><!-- /.screen-inner -->
+      </div><!-- /.screen-frame -->
+    </div><!-- /.work-screen -->
+
+  </div><!-- /.work-split -->
+  <div class="cinema-light left"></div>
+  <div class="cinema-light right"></div>
+</main>
+
+<!-- 下部ナビ -->
+<section class="work-navigation">
+  <div class="top-light"></div>
+  <h2>Other Works</h2>
+
+
+<div class="work-thumbs">
+  <div class="trailer-thumb">
+    <a href="../promo1/index.html">
+      <div class="thumb-wrapper">
+        <img src="../img/flyer_1.png" alt="販促デザイン ハンバーガー店オープンチラシ">
+      </div>
+    </a>
+    <div class="trailer-title">販促デザイン ハンバーガー店オープンチラシ</div>
+  </div>
+
+  <div class="trailer-thumb">
+    <a href="../promo2/index.html">
+      <div class="thumb-wrapper">
+        <img src="../img/onda_tokuten.png" alt="販促デザイン 『カラダの帝王学">
+      </div>
+    </a>
+    <div class="trailer-title">販促デザイン 『カラダの帝王学』</div>
+  </div>
+
+ <div class="trailer-thumb">
+    <a href="../promo4/index.html">
+      <div class="thumb-wrapper">
+        <img src="../img/yonezawa_img.jpg" alt="販促デザイン 『らせん零』講師紹介画像">
+      </div>
+    </a>
+    <div class="trailer-title">販促デザイン 『らせん零』講師紹介画像</div>
+  </div>
+
+ 
+  <div class="trailer-thumb">
+    <a href="../promo5/index.html">
+      <div class="thumb-wrapper">
+        <img src="../img/3-1.jpg" alt="販促デザイン 『小波津サロン』">
+      </div>
+    </a>
+    <div class="trailer-title">販促デザイン 『小波津サロン』</div>
+  </div>
+
+
+</div>
+
+<div class="back_inner">
+<div class="btn_icon">
+  <div class="back-btn">
+    <a href="../work_index.html" class="btn">Back to view all</a>
+  </div>
+
+      <!-- トップへ戻る -->
+    <div class="view-all-wrapper">
+<a class="view-all-btn" href="../../cinematic_theater.html?skipIntro=1">
+  PORTFOLIOトップへ戻る
+</a>
+    </div>
+    </div>
+    </div>
+</section>
+
+
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <script src="js/script.js"></script>
+    <!-------------------------------------------------
+   画像保護
+    -------------------------------------------------->
+  <script>
+    $(function () {
+      var urlParam = location.search.substring(1);
+      if (urlParam) {
+        var param = urlParam.split("&");
+        var paramArray = {}; // オブジェクトに修正
+        for (let i = 0; i < param.length; i++) {
+          var paramItem = param[i].split("=");
+          paramArray[paramItem[0]] = paramItem[1];
+        }
+        var img = paramArray.img || ""; // imgが未定義の場合に備える
+        console.log(img);
+      }
+
+      if (!(img === "on")) {
+        $("img").on("contextmenu", function (e) {
+          return false;
+        });
+        document.ondragstart = function () {
+          return false;
+        };
+        $("img").css({
+          "-webkit-touch-callout": "none",
+          "-webkit-user-select": "none",
+          "-moz-touch-callout": "none",
+          "-moz-user-select": "none",
+          "touch-callout": "none",
+          "user-select": "none",
+        });
+      }
+    });
+  </script>
+</body>
+</html>
