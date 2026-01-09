@@ -1177,8 +1177,14 @@ html, body { scroll-padding-top: var(--header-h); }
     opacity: 0.35;
   }
 
-.closing-slate .cm-sub {
+  .closing-slate .cm-sub {
  font-size: clamp(15px, 3vw, 16px);
+ padding: 6vh 1vw;
+}
+
+.credits p:nth-child(5),
+.credits p:last-child {
+   line-height: 1.2;
 }
 }
 
@@ -1190,6 +1196,7 @@ html, body { scroll-padding-top: var(--header-h); }
     transform: translate(50%, -50%) scale(0.78);
   }
 }
+
 
 
 
