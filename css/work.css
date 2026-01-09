@@ -262,8 +262,15 @@ body::after{
 }
 
 @media (max-width: 768px) {
+
+  .work-card img {
+  width: 75%;
+  margin: 0 auto;
+}
+  
 .credits {
   font-size: 3.5vw;
   line-height: 1;
   margin-top: -15vw;
 }
+
