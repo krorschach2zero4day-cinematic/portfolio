@@ -511,13 +511,130 @@ body{
   text-align: center;
 }
 
+.sp {
+  display: none;
+}
+
+.pc {
+  display: block;
+}
+
+
 /* ===== レスポンシブ ===== */
 @media screen and (max-width: 900px){
-  .work-split{ flex-direction:column; height:auto; margin:20px auto; }
-  .work-text{ order:1; width:100%; max-width:100%; padding:28px; }
-  .work-screen{ order:2; width:100%; padding:20px; }
+  .work-split{ flex-direction:column; height:auto; margin:10px auto; }
+  .work-text{ order:1; width:100%; max-width:100%; }
+  .work-screen{ order:2; width:100%; }
   .screen-frame{ max-width:100%; }
   .img-flyer{ max-width:90%; }
   .img-banner{ max-width:80%; }
-  .work-navigation{ margin:24px 12px; }
 }
+
+@media screen and (max-width: 768px) {
+
+  /* ===== 全体 ===== */
+  body {
+    font-size: 14px;
+  }
+
+  .sp {
+    display: block;
+  }
+
+  .pc {
+    display: none;
+  }
+
+  /* ===== レイアウト ===== */
+
+  .theater-header h1{
+    letter-spacing: 0;
+    
+  }
+
+  .work-split {
+    flex-direction: column;
+    padding-top: 10px;
+  }
+
+  .work-text {
+    order: 1;
+  }
+
+  .work-screen {
+    order: 2;
+    margin-bottom: 2rem;
+  }
+
+  /* 左テキスト */
+  .work-text section {
+    order: 3;
+    padding: 0;
+    margin-top: 0;
+  }
+
+  .work-text p {
+    font-size: 4vw;
+  }
+
+  .work-title {
+    font-size: 5.5vw;
+  }
+
+  /* ===== スクリーン ===== */
+  .screen-frame {
+    width: 100%;
+    height: auto;
+    max-height: none;
+    transform: none;
+    border: 8px solid;
+    border-image: linear-gradient(to bottom, #444, #111, #333) 1;
+  }
+
+  .screen-inner {
+    height: auto;
+  }
+
+  .screen-scroll {
+    max-height: none;
+    padding: 1rem 0;
+  }
+
+  /* 画像 */
+  .screen-scroll img {
+    width: 80%;
+  }
+
+  /* ===== サムネ ===== */
+  .work-thumbs {
+    grid-template-columns: 1fr;
+    gap: 48px;
+  }
+
+  .thumb-wrapper {
+    width: 100%;
+    height: auto;
+  }
+
+  .thumb-wrapper img {
+    max-height: none;
+  }
+
+  /* ===== 下部 ===== */
+  .back_inner {
+    padding: 5rem 1.5rem;
+  }
+
+  .btn_icon {
+    gap: 1rem;
+  }
+
+  .view-all-btn {
+    font-size: 3vw;
+  }
+
+  .work-navigation {
+    padding-bottom: 0;
+  }
+}
+
