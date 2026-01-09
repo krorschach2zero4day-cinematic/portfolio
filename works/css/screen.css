@@ -618,6 +618,7 @@ body{
 
   .thumb-wrapper img {
     max-height: none;
+    width: 85%;
   }
 
   /* ===== 下部 ===== */
@@ -637,4 +638,5 @@ body{
     padding-bottom: 0;
   }
 }
+
 
