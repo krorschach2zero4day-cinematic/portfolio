@@ -621,6 +621,10 @@ body{
     width: 85%;
   }
 
+  .trailer-title {
+    margin-top: 15px;
+  }
+
   /* ===== 下部 ===== */
   .back_inner {
     padding: 5rem 1.5rem;
@@ -638,5 +642,6 @@ body{
     padding-bottom: 0;
   }
 }
+
 
 
