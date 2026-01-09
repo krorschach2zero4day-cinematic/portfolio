@@ -1,0 +1,151 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>広告バナー制作｜Work Detail</title>
+  <link rel="stylesheet" href="../css/screen.css">
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700&family=Noto+Serif+JP:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<header class="theater-header">
+  <h1>Now Showing</h1>
+</header>
+
+<main class="work-detail">
+  <div class="work-split">
+
+    <!-- 左：テキスト -->
+    <aside class="work-text">
+      <h2 class="work-title">広告バナー｜『Dr.Ozawaのナチュロパシー』プロモーション</h2>
+
+      <section>
+        <h3>概要</h3>
+        <p>自然療法の印象を柔らかく伝え、医療の一端としての説得力を兼ね備えたバナー。</p>
+      </section>
+
+      <section>
+        <h3>説明</h3>
+        <p>メディカルハーブ＝医学的に根拠のある自然療法であることを強調するために制作しました。<br>自然のエッセンスを感じさせながらも、全体の基調はクリーンでシンプルにして、「オーガニック感に寄りすぎず、医学的な信頼性」を損なわないバランスを実現しました。<br>海外発祥で医学的に実践されている信頼性と、利用者の健康への効果を端的に訴求しています。<br>緑をメインとせず、植物をアクセント的にあしらうことで、印象を柔らかくし、医療の一端としての説得力を兼ね備えたデザインとしました。</p>
+      </section>
+    </aside>
+
+    <!-- 右：スクリーン（LP用：full-scroll） -->
+    <div class="work-screen full-scroll">
+      <div class="screen-frame">
+        <div class="screen-inner">
+<div class="screen-scroll">
+
+  <!-- モックアップ -->
+   <div class="lp-section">
+    <h3 class="caption">1200×628</h3>
+  <img src="../img/2509ozawa_1200_628_copy4.jpg" alt="バナー" class="img-banner">
+  </div>
+<br>
+  <!-- PC全体図 -->
+  <div class="lp-section">
+    <h3 class="caption">1080×1080</h3>
+    <img src="../img/2509ozawa_1080_1080_copy4.jpg" alt="バナー" class="img-banner">
+  </div>
+<br>
+  <!-- SP全体図 -->
+   <div class="lp-section">
+    <h3 class="caption">300×300</h3>
+  <img src="../img/2509ozawa_300_300_copy4.jpg" alt="バナー" class="img-banner">
+  </div>
+</div>
+
+        </div><!-- /.screen-inner -->
+      </div><!-- /.screen-frame -->
+    </div><!-- /.work-screen -->
+
+  </div><!-- /.work-split -->
+</main>
+
+<!-- 下部ナビ -->
+<section class="work-navigation">
+  <h2>Other Works</h2>
+<div class="work-thumbs">
+  <div class="trailer-thumb">
+    <a href="../banner1/index.html">
+      <div class="thumb-wrapper">
+        <img src="../img/hyn_1200_628_copy2.jpg" alt="作品2">
+      </div>
+    </a>
+   <div class="trailer-title">広告バナー｜『繁盛治療院1DAYワークショップ』</div>
+  </div>
+  <div class="trailer-thumb">
+    <a href="../banner2/index.html">
+      <div class="thumb-wrapper">
+        <img src="../img/2502sekino_1200_628_copy5.jpg" alt="作品2">
+      </div>
+    </a>
+  <div class="trailer-title">広告バナー｜『全融合整体』</div>
+  </div>
+  <div class="trailer-thumb">
+    <a href="../banner3/index.html">
+      <div class="thumb-wrapper">
+        <img src="../img/2505miyazaki_copy4_1200_628.jpg" alt="作品3">
+      </div>
+    </a>
+  <div class="trailer-title">広告バナー｜『施術を越えた新感覚ボディメソッド』</div>
+  </div>
+</div>
+
+<div class="back_inner">
+<div class="btn_icon">
+  <div class="back-btn">
+    <a href="../work_index.html" class="btn">Back to view all</a>
+  </div>
+
+      <!-- トップへ戻る -->
+    <div class="view-all-wrapper">
+<a class="view-all-btn" href="../../cinematic_theater.html?skipIntro=1">
+  PORTFOLIOトップへ戻る
+</a>
+    </div>
+    </div>
+    </div>
+</section>
+
+
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <script src="js/script.js"></script>
+    <!-------------------------------------------------
+   画像保護
+    -------------------------------------------------->
+  <script>
+    $(function () {
+      var urlParam = location.search.substring(1);
+      if (urlParam) {
+        var param = urlParam.split("&");
+        var paramArray = {}; // オブジェクトに修正
+        for (let i = 0; i < param.length; i++) {
+          var paramItem = param[i].split("=");
+          paramArray[paramItem[0]] = paramItem[1];
+        }
+        var img = paramArray.img || ""; // imgが未定義の場合に備える
+        console.log(img);
+      }
+
+      if (!(img === "on")) {
+        $("img").on("contextmenu", function (e) {
+          return false;
+        });
+        document.ondragstart = function () {
+          return false;
+        };
+        $("img").css({
+          "-webkit-touch-callout": "none",
+          "-webkit-user-select": "none",
+          "-moz-touch-callout": "none",
+          "-moz-user-select": "none",
+          "touch-callout": "none",
+          "user-select": "none",
+        });
+      }
+    });
+  </script>
+</body>
+</html>
